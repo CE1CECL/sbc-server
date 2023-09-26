@@ -16,7 +16,7 @@
 			src = ./.;
 			name = "spacebar-server-ts";
 			nativeBuildInputs = with pkgs; [ python3 ];
-			npmDepsHash = "";
+			npmDepsHash = "sha256-axzbsD+jOViIQ9+qFSX41j6harBL9vyaXDKdOSaPW8M=";
 			makeCacheWritable = true;
 			postPatch = ''
 				substituteInPlace package.json --replace 'npx patch-package' '${pkgs.nodePackages.patch-package}/bin/patch-package'

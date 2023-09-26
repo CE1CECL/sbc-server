@@ -3,7 +3,6 @@
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
-  #inputs.nixpkgs.url = "github:lilyinstarlight/nixpkgs/unheck/nodejs";
 
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachSystem flake-utils.lib.allSystems (system:
@@ -17,8 +16,7 @@
 			src = ./.;
 			name = "spacebar-server-ts";
 			nativeBuildInputs = with pkgs; [ python3 ];
-			npmDepsHash = "sha256-WYPSYfKHK2Cq02lOl8w8A1TUSnliw06Kq4YocuuIfms=";
-			#dontNpmBuild = true;
+			npmDepsHash = "";
 			makeCacheWritable = true;
 			postPatch = ''
 				substituteInPlace package.json --replace 'npx patch-package' '${pkgs.nodePackages.patch-package}/bin/patch-package'
